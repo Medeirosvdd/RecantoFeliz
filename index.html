@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/NavBar.css" />
+    <link rel="stylesheet" href="css/Style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <link rel="icon" href="img/Logo.svg" />
+    <title>Recanto Feliz</title>
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <nav>
+          <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+          </div>
+          <div class="logo">Recanto Feliz</div>
+          <div class="nav-items">
+            <li><a href="index.html">Cadastrar</a></li>
+            <li><a href="sobre.html">Consultar</a></li>
+            <li><a href="projetos.html">Sobre</a></li>
+            <li><a href="contatos.html">Contatos</a></li>
+          </div>
+          <div class="search-icon">
+            <span class="fas fa-search"></span>
+          </div>
+          <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <h1>Gerenciamento de Quartos</h1>
+      <div class="Ce">
+        <!-- Formulário de cadastro -->
+        <div class="card">
+          <div class="card-body">
+            <h2>Cadastrar Quarto</h2>
+            <label for="numero">Número do Quarto:</label>
+            <input type="number" id="numero" min="1" max="50" required /><br />
+
+            <label for="categoria">Categoria:</label>
+            <select id="categoria" required>
+              <option value="">Selecione</option>
+              <option value="Básico">Básico</option>
+              <option value="Médio">Médio</option>
+              <option value="Prime">Prime</option></select
+            ><br />
+
+            <label for="status">Status:</label>
+            <select id="status" required>
+              <option value="">Selecione</option>
+              <option value="Livre">Livre</option>
+              <option value="Ocupado">Ocupado</option></select
+            ><br />
+
+            <button id="btnCadastrar">Cadastrar Quarto</button>
+          </div>
+        </div>
+      </div>
+      <h2>Lista de Quartos</h2>
+      <div id="listar-quartos">
+        <p>Carregando quartos...</p>
+      </div>
+
+      <!-- Formulário de edição -->
+      <div id="formulario-edicao-quarto" class="card" style="display: none">
+        <div class="card-body">
+          <h2>Editar Quarto</h2>
+
+          <label for="editar-numero">Número:</label>
+          <input type="number" id="editar-numero" min="1" max="50" /><br />
+
+          <label for="editar-categoria">Categoria:</label>
+          <select id="editar-categoria">
+            <option value="">Selecione</option>
+            <option value="Básico">Básico</option>
+            <option value="Médio">Médio</option>
+            <option value="Prime">Prime</option></select
+          ><br />
+
+          <label for="editar-status">Status:</label>
+          <select id="editar-status">
+            <option value="">Selecione</option>
+            <option value="Livre">Livre</option>
+            <option value="Ocupado">Ocupado</option></select
+          ><br />
+
+          <input type="hidden" id="editar-id-quarto" />
+
+          <button id="btn-salvar-edicao-quarto">Salvar Alterações</button>
+          <button id="btn-cancelar-edicao-quarto">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Recanto Feliz. Todos os direitos reservados.</p>
+    </footer>
+
+    <script type="module" src="JS/firebaseConfig.js"></script>
+    <script type="module" src="JS/Script.js"></script>
+    <script type="module" src="JS/NavBar.js"></script>
+  </body>
+</html>
