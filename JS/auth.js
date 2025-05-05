@@ -9,7 +9,6 @@ import {
   getDocs,
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 
-// Função para obter os inputs do formulário
 function getInputsQuarto() {
   return {
     numero: document.getElementById("numero"),
@@ -18,7 +17,6 @@ function getInputsQuarto() {
   };
 }
 
-// Função para obter os valores do quarto
 function getValoresQuarto({ numero, categoria, status }) {
   return {
     numero: parseInt(numero.value),
@@ -27,16 +25,14 @@ function getValoresQuarto({ numero, categoria, status }) {
   };
 }
 
-// Função para limpar os inputs
 function limparInputsQuarto({ numero, categoria, status }) {
   numero.value = "";
   categoria.value = "";
   status.value = "";
 }
 
-// Cadastrar um quarto
 document
-  .getElementById("btnCadastrar")
+ .getElementById("btnCadastrar")
   .addEventListener("click", async function () {
     const Inputs = getInputsQuarto();
     const dados = getValoresQuarto(Inputs);
@@ -62,7 +58,6 @@ document
 
 const listaQuartosDiv = document.getElementById("listar-quartos");
 
-// Renderiza a lista de quartos
 function renderizarListaDeQuartos(quartos) {
   listaQuartosDiv.innerHTML = "";
 
@@ -90,7 +85,6 @@ function renderizarListaDeQuartos(quartos) {
   }
 }
 
-// Carregar quartos em tempo real
 function carregarListaDeQuartosTempoReal() {
   onSnapshot(collection(db, "quartos"), (snapshot) => {
     const quartos = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
@@ -100,7 +94,6 @@ function carregarListaDeQuartosTempoReal() {
 
 document.addEventListener("DOMContentLoaded", carregarListaDeQuartosTempoReal);
 
-// Excluir um quarto
 async function excluirQuarto(id) {
   try {
     await deleteDoc(doc(db, "quartos", id));
@@ -110,7 +103,6 @@ async function excluirQuarto(id) {
   }
 }
 
-// Função que lida com o clique em Excluir e Editar
 async function lidarCliqueQuarto(evento) {
   const btnExcluir = evento.target.closest(".btn-Excluir-Quarto");
   const btnEditar = evento.target.closest(".btn-Editar-Quarto");
@@ -137,7 +129,6 @@ async function lidarCliqueQuarto(evento) {
 
 listaQuartosDiv.addEventListener("click", lidarCliqueQuarto);
 
-// Preencher o formulário de edição com os dados do quarto
 function preencherFormularioEdicaoQuarto(quarto) {
   document.getElementById("editar-numero").value = quarto.numero;
   document.getElementById("editar-categoria").value = quarto.categoria;
@@ -146,7 +137,6 @@ function preencherFormularioEdicaoQuarto(quarto) {
   document.getElementById("formulario-edicao-quarto").style.display = "block";
 }
 
-// Salvar a edição do quarto
 document
   .getElementById("btn-salvar-edicao-quarto")
   .addEventListener("click", async () => {
@@ -176,7 +166,6 @@ document
     }
   });
 
-// Cancelar a edição do quarto
 document
   .getElementById("btn-cancelar-edicao-quarto")
   .addEventListener("click", () => {
