@@ -1,136 +1,97 @@
-# Gerenciamento de Quartos - Hotel Recanto Feliz
+# Sistema Web - Hotel Recanto Feliz
 
-> Sistema de gerenciamento de quartos desenvolvido para a disciplina de Programação Web 1, focado em operações CRUD e integração com Firebase.
+Projeto final da disciplina de Programação Web I com foco na integração de conteúdos estudados durante o semestre, desenvolvido colaborativamente pelos alunos.
+
+---
 
 ## 📌 Sobre o Projeto
 
-Este repositório contém um sistema de gerenciamento de disponibilidade dos quartos do Hotel Recanto Feliz, com funções para:
+Este sistema foi desenvolvido como entrega final da disciplina de Programação Web I. Seu objetivo é representar, de forma funcional, o gerenciamento completo de um hotel (Recanto Feliz), incluindo as funcionalidades de:
 
-- Cadastro de novos quartos
-- Consulta da ocupação dos quartos
-- Atualização de informações dos quartos
-- Exclusão de quartos
+- Cadastro e gerenciamento de **quartos** (Murilo Medeiros)
+- Cadastro e gerenciamento de **hóspedes** (Arthur Santana)
+- Cadastro e gerenciamento de **reservas** (Filypi)
 
-O projeto abrange a expansão do hotel de 30 para 50 quartos, divididos nas categorias: Básico, Médio e Prime.
-
-A aplicação foi desenvolvida como Prova de Conceito (POC) para o projeto da disciplina de Análise de Sistemas.
+O sistema implementa as operações básicas de um CRUD completo, com persistência de dados usando Firebase e autenticação de usuários.
 
 ---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- HTML
-- CSS
-- JavaScript
-- Firebase (Realtime Database)
-- Git/GitHub para versionamento
+- HTML  
+- CSS  
+- JavaScript  
+- Firebase (Realtime Database e Autenticação)  
+- Git e GitHub para versionamento
 
 ---
 
-## 🚀 Como Executar
+## 🎯 Objetivo do Projeto
 
-1. **Clone o repositório**:
-   ```bash
-   git clone https://github.com/Medeirosvdd/GrenciamentoDeQuarto
-   ```
-2. **Abra o projeto em seu navegador** (basta abrir o `index.html`).
-3. **Configure o Firebase**:
-   - Acesse [Firebase Console](https://console.firebase.google.com/).
-   - Crie um novo projeto.
-   - No menu lateral, clique em **Realtime Database** e crie o banco.
-   - Copie as credenciais do projeto.
-   - No arquivo `script.js`, substitua a configuração pelo seu projeto.
-
-4. **Utilize o sistema**:
-   - Cadastre quartos
-   - Consulte a lista de quartos
-   - Edite informações
-   - Exclua quartos
+Demonstrar a capacidade da equipe em aplicar os conhecimentos adquiridos durante a disciplina por meio da construção de um sistema web funcional, com publicação no GitHub e apresentação final.
 
 ---
 
-## 📂 Estrutura do Repositório
+## 👥 Autores
+
+- **Murilo Medeiros** – CRUD de Quartos  
+- **Arthur Santana** – CRUD de Hóspedes  
+- **Filypi** – CRUD de Reservas  
+
+---
+
+## 🗂️ Organização do Projeto
 
 ```bash
-📂 GerenciamentoDeQuarto
+📂 RecantoFeliz
 ├── 📄 index.html
 ├── 📄 style.css
 ├── 📂 JS
-│   ├── 📄 Script.js
-│   └── 📄 firebaseConfig.js
+│   ├── 📄 auth.js
+│   ├── 📄 firebaseConfig.js
+│   ├── 📄 quartos.js
+│   ├── 📄 hospedes.js
+│   └── 📄 reservas.js
 ├── 📂 img
-│   └── 📄 Fundo.svg
+│   └── 📄 fundo.svg
+├── 📄 .gitignore
 ├── 📄 README.md
 └── 📄 LICENSE
-
-```
-
----
-
-## 📖 Exemplos de Código
-
-```javascript
-// Exemplo de cadastro de quarto
-function cadastrarQuarto() {
-    const numero = document.getElementById('numero').value;
-    const categoria = document.getElementById('categoria').value;
-    
-    firebase.database().ref('quartos/' + numero).set({
-        numero: numero,
-        categoria: categoria,
-        ocupado: false
-    });
-}
-```
-
-```html
-<!-- Exemplo de formulário HTML -->
-<form id="formQuarto">
-    <input type="text" id="numero" placeholder="Número do Quarto" required>
-    <select id="categoria">
-        <option value="Básico">Básico</option>
-        <option value="Médio">Médio</option>
-        <option value="Prime">Prime</option>
-    </select>
-    <button type="submit">Cadastrar Quarto</button>
-</form>
-```
-
-```css
-/* Exemplo de estilização CSS */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f5f5f5;
-}
-
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-}
-```
+````
 
 ---
 
-## 🏆 Autor
+## ✅ Requisitos Atendidos
 
-👤 **Murilo Medeiros**  
-📧 Email: medeirosfusion@gmail.com  
-🔗 [LinkedIn](linkedin.com/in/murilo-medeiros-745917314)  
-🔗 [GitHub](https://github.com/Medeirosvdd)
+* [x] Repositório no GitHub
+* [x] .gitignore configurado
+* [x] README com título, objetivo, tecnologias e autores
+* [x] Diretórios organizados
+* [x] Operações CRUD (Create, Read, Update, Delete)
+* [x] Cadastro e autenticação de usuários
+* [x] Persistência com Firebase
 
 ---
 
-## 🎯 Objetivo do Repositório
+## 📽️ Apresentação
 
-Este repositório foi criado para demonstrar a funcionalidade de um CRUD completo integrado com Firebase, focando na prática de tecnologias web e banco de dados em tempo real.  
-O projeto também compõe parte da avaliação individual da disciplina de Programação Web 1.
+A equipe apresentará:
+
+* Materiais da disciplina de Análise de Sistemas: modelagem, requisitos e diagramas
+* Demonstração do sistema funcionando
+* Explicação do que foi desenvolvido por cada integrante
+
+---
+
+## 📧 Contato
+
+* **Murilo Medeiros** – [medeirosfusion@gmail.com](mailto:medeirosfusion@gmail.com)
+* [GitHub](https://github.com/Medeirosvdd)
 
 ---
 
 ## ⚖️ Licença
 
-Este projeto está licenciado sob os termos da licença MIT.  
-Consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
+Este projeto está licenciado sob os termos da licença MIT. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
 
+    
